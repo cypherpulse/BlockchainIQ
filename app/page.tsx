@@ -27,7 +27,7 @@ export default function Home() {
     setUserName(name);
     const dailyQuestions = getDailyQuestions();
     setQuestions(dailyQuestions);
-    setAnswers(new Array(15).fill(-1)); // Updated to 15 questions
+    setAnswers(new Array(10).fill(-1)); // Updated to 10 questions
     setState("quiz");
   };
 

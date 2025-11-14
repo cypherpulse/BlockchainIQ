@@ -43,7 +43,7 @@ export function getDailyQuestions(): Question[] {
   }
 
   // Shuffle options for each question to randomize correct answer positions
-  const questionsWithShuffledOptions = shuffledQuestions.slice(0, 15).map(question => 
+  const questionsWithShuffledOptions = shuffledQuestions.slice(0, 10).map(question => 
     shuffleQuestionOptions(question, seededRandom)
   );
 

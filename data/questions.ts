@@ -1064,5 +1064,265 @@ export const questions: Question[] = [
     correctAnswer: 1,
     difficulty: 'hard',
     category: 'technical'
+  },
+  {
+    id: 81,
+    question: "What is the difference between optimistic and zero-knowledge rollups?",
+    options: [
+      "Optimistic rollups are faster, ZK rollups are more secure",
+      "Optimistic rollups assume validity, ZK rollups prove validity cryptographically",
+      "Optimistic rollups use more gas, ZK rollups use less",
+      "Optimistic rollups work on Ethereum, ZK rollups work on other chains"
+    ],
+    correctAnswer: 1,
+    difficulty: 'hard',
+    category: 'technical'
+  },
+  {
+    id: 82,
+    question: "What is composability in DeFi?",
+    options: [
+      "The ability to combine different DeFi protocols seamlessly",
+      "The ability to compose music using blockchain",
+      "The ability to create composite NFTs",
+      "The ability to compose smart contracts"
+    ],
+    correctAnswer: 0,
+    difficulty: 'hard',
+    category: 'defi'
+  },
+  {
+    id: 83,
+    question: "What is a rebase token mechanism?",
+    options: [
+      "A token that changes its total supply based on price",
+      "A token that rebases to a different blockchain",
+      "A token that requires rebasing your computer",
+      "A token that rebases its mining algorithm"
+    ],
+    correctAnswer: 0,
+    difficulty: 'hard',
+    category: 'defi'
+  },
+  {
+    id: 84,
+    question: "What is the role of oracles in blockchain?",
+    options: [
+      "To predict cryptocurrency prices",
+      "To provide external data to smart contracts",
+      "To validate oracle database queries",
+      "To mine oracle coins"
+    ],
+    correctAnswer: 1,
+    difficulty: 'hard',
+    category: 'technical'
+  },
+  {
+    id: 85,
+    question: "What is a Dutch auction in NFT minting?",
+    options: [
+      "An auction starting high and decreasing over time",
+      "An auction for Dutch-themed NFTs",
+      "An auction held in the Netherlands",
+      "An auction for Dutch coins"
+    ],
+    correctAnswer: 0,
+    difficulty: 'hard',
+    category: 'nft'
+  },
+  {
+    id: 86,
+    question: "What is the significance of the 'triple halving' in Bitcoin?",
+    options: [
+      "Three halvings that reduce rewards to zero",
+      "A theory about Bitcoin's long-term value",
+      "Three halvings that increase mining difficulty",
+      "A halving that affects three cryptocurrencies"
+    ],
+    correctAnswer: 0,
+    difficulty: 'hard',
+    category: 'mining'
+  },
+  {
+    id: 87,
+    question: "What is a 'black swan' event in cryptocurrency?",
+    options: [
+      "A rare cryptocurrency named after a bird",
+      "An unpredictable event with massive impact",
+      "A market crash caused by black-market trading",
+      "A security breach involving swans"
+    ],
+    correctAnswer: 1,
+    difficulty: 'hard',
+    category: 'trading'
+  },
+  {
+    id: 88,
+    question: "What is the difference between fungible and non-fungible tokens?",
+    options: [
+      "Fungible tokens are unique, non-fungible are interchangeable",
+      "Fungible tokens are interchangeable, non-fungible are unique",
+      "Fungible tokens are physical, non-fungible are digital",
+      "There is no difference"
+    ],
+    correctAnswer: 1,
+    difficulty: 'hard',
+    category: 'nft'
+  },
+  {
+    id: 89,
+    question: "What is a 'vampire attack' in DeFi?",
+    options: [
+      "An attack by vampire-themed NFTs",
+      "When a new protocol drains liquidity from an existing one",
+      "A type of smart contract exploit",
+      "An attack on vampire miners"
+    ],
+    correctAnswer: 1,
+    difficulty: 'hard',
+    category: 'defi'
+  },
+  {
+    id: 90,
+    question: "What is the 'impossible trinity' in blockchain design?",
+    options: [
+      "Security, scalability, and decentralization cannot all be maximized simultaneously",
+      "Three impossible consensus mechanisms",
+      "Three impossible smart contract languages",
+      "Three impossible mining algorithms"
+    ],
+    correctAnswer: 0,
+    difficulty: 'hard',
+    category: 'technical'
+  },
+  {
+    id: 91,
+    question: "What is a 'soft fork' vs a 'hard fork'?",
+    options: [
+      "Soft fork is backward compatible, hard fork is not",
+      "Soft fork changes mining, hard fork changes consensus",
+      "Soft fork is temporary, hard fork is permanent",
+      "Soft fork affects software, hard fork affects hardware"
+    ],
+    correctAnswer: 0,
+    difficulty: 'hard',
+    category: 'technical'
+  },
+  {
+    id: 92,
+    question: "What is 'delta hedging' in crypto options trading?",
+    options: [
+      "Hedging against delta changes in price",
+      "A strategy to maintain delta-neutral position",
+      "Hedging against triangular arbitrage",
+      "A type of delta token"
+    ],
+    correctAnswer: 1,
+    difficulty: 'hard',
+    category: 'trading'
+  },
+  {
+    id: 93,
+    question: "What is the 'fat finger' error in trading?",
+    options: [
+      "Typing the wrong amount in a trade order",
+      "A finger-shaped NFT collection",
+      "A type of biometric authentication failure",
+      "An error in finger mining hardware"
+    ],
+    correctAnswer: 0,
+    difficulty: 'hard',
+    category: 'trading'
+  },
+  {
+    id: 94,
+    question: "What is a 'zombie' smart contract?",
+    options: [
+      "A contract that comes back to life",
+      "An abandoned contract with remaining funds",
+      "A contract that creates zombie NFTs",
+      "A contract that mines zombie coins"
+    ],
+    correctAnswer: 1,
+    difficulty: 'hard',
+    category: 'technical'
+  },
+  {
+    id: 95,
+    question: "What is 'quantum resistance' in blockchain?",
+    options: [
+      "Resistance to quantum physics laws",
+      "Cryptographic algorithms secure against quantum computing",
+      "Resistance to quantum entanglement attacks",
+      "A type of quantum mining"
+    ],
+    correctAnswer: 1,
+    difficulty: 'hard',
+    category: 'security'
+  },
+  {
+    id: 96,
+    question: "What is a 'flash crash' in cryptocurrency?",
+    options: [
+      "A crash caused by lightning strikes",
+      "A rapid price drop followed by recovery",
+      "A crash of flash storage devices",
+      "A type of flash loan exploit"
+    ],
+    correctAnswer: 1,
+    difficulty: 'hard',
+    category: 'trading'
+  },
+  {
+    id: 97,
+    question: "What is 'state bloat' in blockchain?",
+    options: [
+      "When blockchain state becomes too large to manage",
+      "A type of state-sponsored attack",
+      "Bloat caused by state variables in smart contracts",
+      "A bloating of state mining pools"
+    ],
+    correctAnswer: 0,
+    difficulty: 'hard',
+    category: 'technical'
+  },
+  {
+    id: 98,
+    question: "What is a 'sybil attack'?",
+    options: [
+      "An attack using multiple fake identities",
+      "An attack on Sybil cryptocurrency",
+      "A type of social engineering attack",
+      "An attack using sybil mining hardware"
+    ],
+    correctAnswer: 0,
+    difficulty: 'hard',
+    category: 'security'
+  },
+  {
+    id: 99,
+    question: "What is 'tokenomics'?",
+    options: [
+      "The economics of token design and distribution",
+      "A branch of economics studying tokens",
+      "The study of token mining economics",
+      "Economics of token-based payments"
+    ],
+    correctAnswer: 0,
+    difficulty: 'hard',
+    category: 'basics'
+  },
+  {
+    id: 100,
+    question: "What is a 'wrapped BTC' (WBTC)?",
+    options: [
+      "Bitcoin wrapped in paper",
+      "A token representing Bitcoin on Ethereum blockchain",
+      "A wrapped Bitcoin mining contract",
+      "A type of Bitcoin wallet"
+    ],
+    correctAnswer: 1,
+    difficulty: 'hard',
+    category: 'defi'
   }
 ];
