@@ -22,6 +22,7 @@ BlockchainIQ is an interactive quiz platform that challenges users with comprehe
 - **🎨 Responsive UI**: Beautiful, modern interface that works across all devices
 - **🚀 Social Sharing**: Share achievements on Twitter, LinkedIn, and other platforms
 - **⚡ Real-time Scoring**: Instant feedback and performance tracking
+- **🔗 Wallet Integration**: Connect your wallet for enhanced web experience (Reown AppKit)
 
 ## 🧠 Knowledge Areas Covered
 
@@ -47,6 +48,8 @@ The quiz tests knowledge across multiple blockchain domains:
 ### Mini App Integration
 - **@farcaster/miniapp-sdk**: Farcaster Mini App functionality
 - **@coinbase/onchainkit**: Base blockchain integration
+- **@reown/appkit**: Wallet connection library (v1.8.14)
+- **@reown/appkit-adapter-wagmi**: Wagmi adapter for Reown AppKit (v1.8.14)
 - **Wagmi**: Ethereum library for React
 
 ### Features

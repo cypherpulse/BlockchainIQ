@@ -1,7 +1,9 @@
 'use client';
 
-import { useState } from 'react';
-import { Zap, Brain, Trophy, Users } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Zap, Brain, Trophy, Users, Wallet } from 'lucide-react';
+import { AppKitButton } from '@reown/appkit/react';
+import { sdk } from '@farcaster/miniapp-sdk';
 
 interface HomePageProps {
   onStartQuiz: (name: string) => void;
@@ -9,6 +11,24 @@ interface HomePageProps {
 
 export default function HomePage({ onStartQuiz }: HomePageProps) {
   const [name, setName] = useState('');
+  const [isMiniApp, setIsMiniApp] = useState(false);
+
+  useEffect(() => {
+    // Check if we're in a MiniApp context
+    const checkMiniAppContext = async () => {
+      try {
+        if (typeof sdk !== 'undefined' && sdk.context) {
+          const context = await sdk.context;
+          setIsMiniApp(!!context);
+        }
+      } catch (error) {
+        // Not in MiniApp context
+        setIsMiniApp(false);
+      }
+    };
+
+    checkMiniAppContext();
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -18,8 +38,30 @@ export default function HomePage({ onStartQuiz }: HomePageProps) {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="w-full max-w-4xl">
+    <div className="min-h-screen">
+      {/* Navbar */}
+      <nav className="bg-white shadow-sm border-b border-gray-200 px-4 py-3">
+        <div className="max-w-4xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-primary-500 rounded-lg">
+              <Brain className="w-6 h-6 text-white" />
+            </div>
+            <h2 className="text-xl font-bold text-primary-600">BlockchainIQ</h2>
+          </div>
+          {!isMiniApp && (
+            <AppKitButton
+              label="Connect"
+              balance="hide"
+              size="sm"
+              className="!bg-orange-500 !text-white !px-4 !py-2 !rounded-lg !font-medium hover:!bg-orange-600 transition-colors"
+            />
+          )}
+        </div>
+      </nav>
+
+      {/* Main Content */}
+      <div className="flex items-center justify-center p-4 min-h-[calc(100vh-80px)]">
+        <div className="w-full max-w-4xl">
         {/* Header */}
         <div className="text-center mb-8 animate-fade-in">
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -95,6 +137,7 @@ export default function HomePage({ onStartQuiz }: HomePageProps) {
         {/* Footer */}
         <div className="text-center text-gray-500">
           <p className="text-sm">Questions reset daily • No signup required • Free forever</p>
+        </div>
         </div>
       </div>
     </div>
