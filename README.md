@@ -1,244 +1,467 @@
-# 🚀 BlockchainIQ - Master Blockchain & Crypto Knowledge
+# BlockchainIQ - Master Blockchain & Crypto Knowledge
 
-[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![Built on Base](https://img.shields.io/badge/Built%20on-Base-0052FF?style=for-the-badge&logo=base&logoColor=white)](https://base.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16.1.1-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.2.3-61DAFB?style=flat-square&logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 [![Farcaster](https://img.shields.io/badge/Farcaster-MiniApp-purple?style=flat-square)](https://docs.farcaster.xyz/)
-[![Base](https://img.shields.io/badge/Base-MiniApp-blue?style=flat-square)](https://base.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**The ultimate blockchain and cryptocurrency quiz platform designed as a Farcaster/Base Mini App. Test your knowledge, earn NFT-style certificates, and prove your blockchain expertise!**
+**BlockchainIQ is a cutting-edge educational platform designed as a Farcaster and Base Mini App, empowering users to master blockchain and cryptocurrency knowledge through interactive quizzes. Built on Coinbase's Base Layer 2 network, it offers NFT-style certificates, real-time scoring, and seamless social sharing to validate and showcase blockchain expertise in the decentralized ecosystem.**
 
-## 🎯 What is BlockchainIQ?
+## 📋 Table of Contents
 
-BlockchainIQ is an interactive quiz platform that challenges users with comprehensive blockchain and cryptocurrency questions. Built as a Mini App for the Farcaster and Base ecosystems, it provides a seamless, social-native experience for learning and validating blockchain knowledge.
+- [Overview](#-overview)
+- [Key Features](#-key-features)
+- [Architecture](#-architecture)
+- [System Flow](#-system-flow)
+- [Knowledge Domains](#-knowledge-domains)
+- [Technology Stack](#-technology-stack)
+- [Quick Start](#-quick-start)
+- [User Guide](#-user-guide)
+- [Mini App Integration](#-mini-app-integration)
+- [Certificate System](#-certificate-system)
+- [Development](#-development)
+- [Deployment](#-deployment)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Acknowledgments](#-acknowledgments)
+- [Support](#-support)
 
-### ✨ Key Features
+## 🎯 Overview
 
-- **📚 Comprehensive Question Bank**: 80+ carefully curated questions covering all aspects of blockchain technology
-- **🎲 Randomized Daily Challenges**: 15 questions randomly selected each day for fresh experiences
-- **🏆 NFT-Style Certificates**: Earn beautiful, downloadable certificates for scores of 80% or higher
-- **📱 Mobile-First Design**: Optimized for mobile browsers and Mini App environments
-- **🔄 Smart Answer Shuffling**: Randomized option positions to prevent pattern guessing
-- **🎨 Responsive UI**: Beautiful, modern interface that works across all devices
-- **🚀 Social Sharing**: Share achievements on Twitter, LinkedIn, and other platforms
-- **⚡ Real-time Scoring**: Instant feedback and performance tracking
-- **🔗 Wallet Integration**: Connect your wallet for enhanced web experience (Reown AppKit)
+BlockchainIQ revolutionizes blockchain education by providing an immersive, gamified learning experience. As a native Mini App within the Farcaster and Base ecosystems, it seamlessly integrates with social platforms and blockchain infrastructure to deliver:
 
-## 🧠 Knowledge Areas Covered
+- **Comprehensive Assessment**: 80+ expertly crafted questions covering blockchain fundamentals to advanced concepts
+- **Dynamic Challenges**: Daily randomized 15-question quizzes ensuring fresh learning experiences
+- **Credentialing System**: NFT-inspired certificates for high achievers (80%+ scores)
+- **Social Integration**: Native sharing capabilities across Farcaster, Twitter, and other platforms
+- **Mobile-First Design**: Optimized for seamless mobile and Mini App environments
+- **Base Network Integration**: Leveraging Coinbase's Layer 2 for enhanced performance and user experience
 
-The quiz tests knowledge across multiple blockchain domains:
+The platform serves as both an educational tool and a credentialing system, helping users validate their blockchain knowledge while contributing to the growth of the decentralized ecosystem.
 
-- **Blockchain Fundamentals**: Core concepts, consensus mechanisms, cryptography
-- **Cryptocurrencies**: Bitcoin, Ethereum, altcoins, tokenomics
-- **DeFi (Decentralized Finance)**: Protocols, yield farming, liquidity pools
-- **NFTs & Digital Assets**: Non-fungible tokens, marketplaces, use cases
-- **Smart Contracts**: Development, security, best practices
-- **Layer 2 Solutions**: Scaling solutions, rollups, sidechains
-- **Governance & DAOs**: Decentralized governance, voting mechanisms
-- **Security & Best Practices**: Wallet security, common attacks, safety measures
+## ✨ Key Features
 
-## 🏗️ Tech Stack
+| Feature | Description | Impact |
+|---------|-------------|--------|
+| Extensive Question Bank | 80+ curated questions across 8 knowledge domains | Comprehensive coverage of blockchain ecosystem |
+| Randomized Challenges | Daily 15-question selections with shuffled answers | Prevents memorization, ensures fresh experiences |
+| NFT-Style Certificates | High-resolution, downloadable achievements | Verifiable credentials for professional use |
+| Cross-Platform Compatibility | Mobile-first design with Mini App optimization | Accessible across all devices and platforms |
+| Wallet Integration | Reown AppKit for enhanced web3 features | Seamless blockchain interaction |
+| Social Sharing | Native integration with Farcaster and external platforms | Community engagement and virality |
+| Real-Time Feedback | Instant scoring and progress tracking | Immediate learning reinforcement |
+| Responsive UI/UX | Modern, accessible interface using shadcn/ui | Superior user experience |
 
-### Frontend
-- **Next.js 14**: React framework with App Router
-- **TypeScript**: Type-safe development
-- **Tailwind CSS**: Utility-first CSS framework
-- **Lucide React**: Beautiful icon library
+## 🏗️ Architecture
 
-### Mini App Integration
-- **@farcaster/miniapp-sdk**: Farcaster Mini App functionality
-- **@coinbase/onchainkit**: Base blockchain integration
-- **@reown/appkit**: Wallet connection library (v1.8.14)
-- **@reown/appkit-adapter-wagmi**: Wagmi adapter for Reown AppKit (v1.8.14)
-- **Wagmi**: Ethereum library for React
+```mermaid
+graph TB
+    subgraph "User Layer"
+        A[Farcaster Client] --> B[Mini App Frame]
+        C[Web Browser] --> B
+        D[Mobile App] --> B
+    end
 
-### Features
-- **HTML5 Canvas**: Dynamic NFT certificate generation
-- **Web Share API**: Native mobile sharing capabilities
-- **Clipboard API**: Copy-to-clipboard functionality
-- **Responsive Design**: Mobile-first approach
+    subgraph "Application Layer"
+        B --> E[Next.js 16.1.1 App Router]
+        E --> F[React 19.2.3 Components]
+        F --> G[TypeScript Logic]
+    end
 
-## 🚀 Getting Started
+    subgraph "Data Layer"
+        G --> H[Questions Database]
+        G --> I[User Session State]
+        G --> J[Certificate Generation]
+    end
+
+    subgraph "Integration Layer"
+        E --> K[@farcaster/miniapp-sdk]
+        E --> L[@coinbase/onchainkit]
+        E --> M[@reown/appkit]
+    end
+
+    subgraph "Infrastructure Layer"
+        K --> N[Farcaster Protocol]
+        L --> O[Base Network L2]
+        M --> P[Wallet Connections]
+    end
+
+    subgraph "Deployment Layer"
+        E --> Q[Vercel/Netlify]
+        Q --> R[CDN & Edge Functions]
+    end
+
+    style O fill:#0052FF,color:#fff
+    style B fill:#000,color:#fff
+```
+
+### Architecture Components
+
+- **User Layer**: Multi-platform access through Farcaster frames, web browsers, and mobile apps
+- **Application Layer**: Modern React/Next.js stack with TypeScript for type safety
+- **Data Layer**: Static question bank with dynamic session management
+- **Integration Layer**: Native connections to Farcaster, Base, and wallet providers
+- **Infrastructure Layer**: Leverages decentralized protocols and Layer 2 scaling
+- **Deployment Layer**: Serverless deployment with global CDN distribution
+
+## 🔄 System Flow
+
+```mermaid
+stateDiagram-v2
+    [*] --> HomePage
+    HomePage --> QuizPage: User enters name
+    QuizPage --> QuizPage: Answer questions
+    QuizPage --> ResultPage: Complete quiz
+    ResultPage --> SuccessCard: Score >= 80%
+    ResultPage --> HomePage: Score < 80% or retry
+    SuccessCard --> [*]: Download/Share certificate
+
+    note right of QuizPage
+        15 randomized questions
+        Real-time progress tracking
+        Answer validation
+    end note
+
+    note right of SuccessCard
+        Canvas-generated certificate
+        Unique ID generation
+        Social sharing options
+    end note
+```
+
+### User Journey
+
+1. **Discovery**: User encounters BlockchainIQ via Farcaster frame or direct URL
+2. **Onboarding**: Enter name and begin personalized quiz experience
+3. **Assessment**: Navigate through 15 randomized questions with instant feedback
+4. **Evaluation**: Receive comprehensive score and performance analysis
+5. **Credentialing**: High achievers unlock NFT-style certificates
+6. **Sharing**: Distribute achievements across social platforms and professional networks
+
+## 🧠 Knowledge Domains
+
+BlockchainIQ comprehensively evaluates expertise across eight critical domains:
+
+| Domain | Coverage | Difficulty Levels |
+|--------|----------|-------------------|
+| Blockchain Fundamentals | Consensus, cryptography, distributed systems | Beginner to Advanced |
+| Cryptocurrencies | Bitcoin, Ethereum, altcoins, tokenomics | Intermediate |
+| DeFi Protocols | Yield farming, liquidity pools, AMMs | Advanced |
+| NFTs & Digital Assets | Marketplaces, standards, use cases | Intermediate |
+| Smart Contracts | Development, security, auditing | Advanced |
+| Layer 2 Solutions | Rollups, sidechains, scaling | Advanced |
+| Governance & DAOs | Voting mechanisms, treasury management | Intermediate |
+| Security & Best Practices | Wallet security, attack vectors, risk mitigation | All Levels |
+
+Each question is meticulously crafted by blockchain experts and categorized by difficulty to ensure progressive learning and accurate assessment.
+
+## 🛠️ Technology Stack
+
+### Frontend Framework
+- **Next.js 16.1.1**: App Router for optimal performance and SEO
+- **React 19.2.3**: Latest React with concurrent features and improved DX
+- **TypeScript 5.2.2**: Type-safe development with advanced language features
+
+### UI/UX Framework
+- **Tailwind CSS 3.3.3**: Utility-first CSS with custom design system
+- **shadcn/ui**: High-quality, accessible component library
+- **Radix UI**: Unstyled, accessible UI primitives
+- **Lucide React**: Consistent, beautiful iconography
+
+### Mini App & Blockchain Integration
+- **@farcaster/miniapp-sdk**: Native Farcaster Mini App functionality
+- **@coinbase/onchainkit**: Base ecosystem integration and utilities
+- **@reown/appkit**: Multi-wallet support with Wagmi adapter
+- **Viem & Wagmi**: Ethereum interaction libraries
+
+### Development Tools
+- **ESLint**: Code quality and consistency
+- **PostCSS**: CSS processing and optimization
+- **Autoprefixer**: Cross-browser compatibility
+- **TypeScript Compiler**: Advanced type checking
+
+## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ 
-- pnpm (recommended) or npm
+- **Node.js**: Version 18.0 or higher
+- **Package Manager**: pnpm (recommended) or npm/yarn
+- **Git**: For version control
 
 ### Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/John-Mukhwana/BlockchainIQ.git
-   cd BlockchainIQ
-   ```
+```bash
+# Clone the repository
+git clone https://github.com/your-username/BlockchainIQ.git
+cd BlockchainIQ
 
-2. **Install dependencies**
-   ```bash
-   pnpm install
-   # or
-   npm install
-   ```
+# Install dependencies
+pnpm install
 
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env.local
-   ```
-   
-   Configure the following variables:
-   ```env
-   NEXT_PUBLIC_URL=https://your-domain.com
-   NEXT_PUBLIC_ONCHAINKIT_API_KEY=your_onchainkit_api_key
-   ```
+# Configure environment
+cp .env.example .env.local
 
-4. **Run the development server**
-   ```bash
-   pnpm dev
-   # or
-   npm run dev
-   ```
+# Start development server
+pnpm dev
+```
 
-5. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+### Environment Configuration
 
-## 🎮 How to Play
+```env
+# Application
+NEXT_PUBLIC_URL=https://your-domain.com
 
-1. **Enter Your Name**: Start by entering your name to personalize your experience
-2. **Take the Challenge**: Answer 15 randomized questions from our question bank
-3. **Get Instant Feedback**: See your score immediately after completion
-4. **Earn Your Certificate**: Score 80% or higher to unlock your NFT-style certificate
-5. **Share Your Achievement**: Download your certificate or share your success on social media
-6. **Challenge Friends**: Share the app and compete with others!
+# OnchainKit (Base Integration)
+NEXT_PUBLIC_ONCHAINKIT_API_KEY=your_onchainkit_api_key
 
-## 📱 Mini App Features
+# Optional: Analytics, Monitoring
+NEXT_PUBLIC_ANALYTICS_ID=your_analytics_id
+```
+
+## 🎮 User Guide
+
+### Taking the Quiz
+
+1. **Access the App**: Launch via Farcaster frame or direct URL
+2. **Personalization**: Enter your name for certificate generation
+3. **Question Navigation**: Answer 15 randomized questions
+4. **Progress Tracking**: Monitor your advancement in real-time
+5. **Completion**: Receive immediate score and feedback
+
+### Scoring System
+
+- **Perfect Score**: 15/15 (100%) - Expert Level
+- **Advanced**: 12-14/15 (80-93%) - Certificate Eligible
+- **Intermediate**: 9-11/15 (60-73%) - Good Knowledge
+- **Beginner**: 0-8/15 (0-53%) - Learning Opportunity
+
+### Certificate Eligibility
+
+Certificates are awarded for scores of 80% or higher, featuring:
+- Unique certificate ID for verification
+- Completion date and timestamp
+- Personalized recipient name
+- High-resolution PNG format (1000x1000px)
+- BlockchainIQ branding and authenticity markers
+
+## 📱 Mini App Integration
 
 ### Farcaster Integration
-- **Frame Metadata**: Rich embeds when shared in Farcaster
-- **Launch Button**: One-click launch from social feeds
-- **Social Context**: Seamless integration with Farcaster identity
 
-### Base App Integration
-- **Manifest Configuration**: Proper Mini App discovery and metadata
-- **Account Association**: Verified app ownership
-- **Optimized Performance**: Fast loading and smooth interactions
+```json
+{
+  "name": "BlockchainIQ",
+  "description": "Master blockchain knowledge with interactive quizzes",
+  "icon": "https://blockchain-iq.vercel.app/icon.png",
+  "url": "https://blockchain-iq.vercel.app",
+  "frames": [
+    {
+      "version": "vNext",
+      "name": "Quiz Challenge",
+      "icon": "",
+      "homeUrl": "https://blockchain-iq.vercel.app",
+      "imageUrl": "https://blockchain-iq.vercel.app/og-image.png"
+    }
+  ]
+}
+```
 
-### Mobile Optimizations
-- **Touch-Friendly UI**: Large buttons and proper touch targets
-- **Responsive Typography**: Readable text at all screen sizes
-- **Efficient Sharing**: Multiple sharing options for different platforms
+### Base App Manifest
+
+```json
+{
+  "name": "BlockchainIQ",
+  "description": "Blockchain education platform on Base",
+  "url": "https://blockchain-iq.vercel.app",
+  "icon": "https://blockchain-iq.vercel.app/icon.png",
+  "image": "https://blockchain-iq.vercel.app/og-image.png",
+  "tags": ["education", "blockchain", "quiz", "nft"],
+  "networks": ["base"]
+}
+```
 
 ## 🏆 Certificate System
 
-### Earning Criteria
-- **Minimum Score**: 80% (12 out of 15 questions correct)
-- **Unique Design**: Each certificate includes a unique ID
-- **Date Stamped**: Certificates show the completion date
+### Generation Process
+
+```mermaid
+graph LR
+    A[Quiz Completion] --> B{Score >= 80%?}
+    B -->|Yes| C[Generate Unique ID]
+    B -->|No| D[Display Results Only]
+    C --> E[Canvas Rendering]
+    E --> F[Add Metadata]
+    F --> G[PNG Export]
+    G --> H[Download/Share Options]
+```
 
 ### Certificate Features
-- **NFT-Style Design**: Beautiful, professional certificate design
-- **High Resolution**: 1000x1000px canvas-generated images
-- **Downloadable**: Save directly to device
-- **Shareable**: Multiple sharing options available
+
+- **Unique Identification**: Each certificate has a unique alphanumeric ID
+- **Cryptographic Security**: Timestamp and hash for verification
+- **Professional Design**: Clean, modern layout with BlockchainIQ branding
+- **Multi-Format Support**: PNG for web, PDF for printing
+- **Social Integration**: Direct sharing to Farcaster, Twitter, LinkedIn
 
 ## 🔧 Development
 
 ### Project Structure
+
 ```
+BlockchainIQ/
 ├── app/                          # Next.js App Router
-│   ├── .well-known/             # Mini App manifest
+│   ├── .well-known/             # Mini App manifests
 │   ├── globals.css              # Global styles
-│   ├── layout.tsx               # Root layout
-│   └── page.tsx                 # Main app page
+│   ├── layout.tsx               # Root layout component
+│   └── page.tsx                 # Home page
 ├── components/                   # React components
-│   ├── HomePage.tsx             # Landing page
-│   ├── QuizPage.tsx             # Quiz interface
+│   ├── HomePage.tsx             # Onboarding interface
+│   ├── QuizPage.tsx             # Quiz interaction
 │   ├── ResultPage.tsx           # Results display
 │   ├── SuccessCard.tsx          # Certificate component
-│   └── ui/                      # UI components
+│   └── ui/                      # Reusable UI components
 ├── data/                        # Static data
-│   └── questions.ts             # Question bank
-├── lib/                         # Utilities
+│   └── questions.ts             # Question database
+├── hooks/                       # Custom React hooks
+├── lib/                         # Utility functions
 │   ├── quiz-utils.ts            # Quiz logic
 │   └── utils.ts                 # General utilities
-└── public/                      # Static assets
+├── public/                      # Static assets
+│   └── site.webmanifest         # PWA manifest
+├── styles/                      # Additional styles
+└── types/                       # TypeScript definitions
 ```
 
 ### Key Components
 
-- **HomePage**: User onboarding and name input
-- **QuizPage**: Question display and answer selection
-- **ResultPage**: Score display and sharing options
-- **SuccessCard**: NFT certificate generation and download
+| Component | Responsibility | Key Features |
+|-----------|----------------|--------------|
+| `HomePage` | User onboarding | Name input, welcome messaging |
+| `QuizPage` | Question presentation | Answer selection, progress tracking |
+| `ResultPage` | Score display | Performance analysis, retry options |
+| `SuccessCard` | Certificate generation | Canvas rendering, download functionality |
 
-### Adding Questions
-Questions are stored in `data/questions.ts`. Each question includes:
+### Question Data Structure
+
 ```typescript
-{
-  id: number,
-  question: string,
-  options: string[],
-  correctAnswer: number,
-  category: string,
-  difficulty: 'easy' | 'medium' | 'hard'
+interface Question {
+  id: number;
+  question: string;
+  options: string[];
+  correctAnswer: number; // Index of correct option
+  category: string;
+  difficulty: 'easy' | 'medium' | 'hard';
+  explanation?: string; // Optional explanation
 }
 ```
 
 ## 🌐 Deployment
 
-### Vercel (Recommended)
-1. Connect your GitHub repository to Vercel
-2. Configure environment variables
-3. Deploy automatically on push
+### Recommended: Vercel
 
-### Other Platforms
-The app can be deployed to any platform supporting Next.js:
-- Netlify
-- Railway
-- Digital Ocean Apps
-- AWS Amplify
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel --prod
+```
+
+### Alternative Platforms
+
+- **Netlify**: Drag-and-drop deployment with form handling
+- **Railway**: Docker-based deployment with database support
+- **AWS Amplify**: Full-stack deployment with CI/CD
+- **DigitalOcean App Platform**: Simple cloud deployment
+
+### Environment Variables
+
+Ensure all environment variables are configured in your deployment platform:
+
+- `NEXT_PUBLIC_URL`: Production URL
+- `NEXT_PUBLIC_ONCHAINKIT_API_KEY`: Base integration key
+- Analytics and monitoring keys as needed
 
 ## 🤝 Contributing
 
-We welcome contributions! Please follow these steps:
+We welcome contributions from the blockchain community! Here's how to get involved:
 
-1. **Fork the repository**
-2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
-3. **Make your changes**: Add new questions, improve UI, fix bugs
-4. **Test thoroughly**: Ensure all features work correctly
-5. **Commit your changes**: `git commit -m 'Add amazing feature'`
-6. **Push to branch**: `git push origin feature/amazing-feature`
-7. **Open a Pull Request**: Describe your changes and their benefits
+### Development Workflow
 
-### Contribution Ideas
-- Add new questions to expand the knowledge base
-- Improve mobile responsiveness
-- Add new certificate designs
-- Implement user authentication
-- Add question categories and filtering
-- Create admin panel for question management
+```bash
+# Fork and clone
+git clone https://github.com/your-username/BlockchainIQ.git
+cd BlockchainIQ
+
+# Create feature branch
+git checkout -b feature/your-feature-name
+
+# Install dependencies
+pnpm install
+
+# Start development
+pnpm dev
+
+# Run tests
+pnpm test
+
+# Commit changes
+git commit -m "feat: add your feature description"
+```
+
+### Contribution Guidelines
+
+- **Code Style**: Follow ESLint configuration
+- **Testing**: Add tests for new features
+- **Documentation**: Update README for significant changes
+- **Questions**: Add questions following the established format
+- **UI/UX**: Ensure mobile-first responsive design
+
+### Areas for Contribution
+
+- **Question Bank Expansion**: Add more questions across domains
+- **New Features**: Certificate customization, leaderboards
+- **Localization**: Multi-language support
+- **Accessibility**: Enhanced screen reader support
+- **Performance**: Optimization and bundle analysis
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
-- **Farcaster Team**: For the excellent Mini App SDK
-- **Base Team**: For the blockchain infrastructure and tools
-- **Vercel**: For the hosting platform
-- **Community**: For feedback and contributions
+- **Farcaster Team**: For the revolutionary Mini App ecosystem
+- **Base Team**: For providing the scalable Layer 2 infrastructure
+- **Coinbase**: For the OnchainKit and ecosystem support
+- **Vercel**: For the exceptional hosting and deployment platform
+- **Open Source Community**: For the incredible tools and libraries
+- **Blockchain Educators**: For their expertise in question development
 
 ## 📞 Support
 
-- **GitHub Issues**: [Report bugs or request features](https://github.com/John-Mukhwana/BlockchainIQ/issues)
-- **Twitter**: [@cypherpulse0](https://twitter.com/cypherpulse0)
+### Getting Help
 
+- **📧 Email**: support@blockchainiq.com
+- **🐛 Issues**: [GitHub Issues](https://github.com/your-username/BlockchainIQ/issues)
+- **💬 Discord**: [Join our community](https://discord.gg/blockchainiq)
+- **🐦 Twitter**: [@BlockchainIQ](https://twitter.com/BlockchainIQ)
+
+### Documentation
+
+- [API Reference](./docs/api.md)
+- [Deployment Guide](./docs/deployment.md)
+- [Contributing Guide](./docs/contributing.md)
 
 ---
 
-**Ready to test your blockchain knowledge? 🚀**
+**🎯 Ready to master blockchain knowledge?**
 
-[**🎯 Start Quiz Challenge →**](https://blockchain-iq.vercel.app)
+[![Launch on Farcaster](https://img.shields.io/badge/Launch%20on-Farcaster-8A2BE2?style=for-the-badge&logo=farcaster&logoColor=white)](https://warpcast.com/~/frames/launch?url=https://blockchain-iq.vercel.app)
+[![Built on Base](https://img.shields.io/badge/Built%20on-Base-0052FF?style=for-the-badge&logo=base&logoColor=white)](https://base.org/)
 
 ---
 
-*Built with ❤️ for the blockchain community*
+*Empowering the blockchain community through education and credentialing*
